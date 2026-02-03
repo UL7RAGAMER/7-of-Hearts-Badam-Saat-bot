@@ -27,8 +27,6 @@ class VRDeepPDCFRTrainer:
         from trainers.traverse_logic import VRDeepPDCFRTraverser
         self.traverser = VRDeepPDCFRTraverser(engine, encoder, agent, opponents=self.opponents)
         self.metrics = BadaamSathMetrics()  # Initialize the metrics tracker
-    # Inside trainers/algorithm_1.py
-
 
     def train(self, num_iterations, episodes_per_iter):
         strategy_list = [CandidStatistician(), LooseAggressive(), TightPassive()]
@@ -80,7 +78,6 @@ class VRDeepPDCFRTrainer:
                 self.save_checkpoint(t)
             if t % self.agent.target_update_freq == 0:
                 self.agent.target_cum_adv.load_state_dict(self.agent.adv_nets.cum_adv.state_dict())
-# In algorithm_1.py
 
     def save_checkpoint(self, iteration):
         path = f"checkpoints/pdcfr_iter_{iteration}.pth"

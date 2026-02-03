@@ -15,10 +15,10 @@ UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
 
 def setup_and_run():
     # 1. Force Absolute Path (Keep your previous fix)
-    os.chdir(os.path.dirname(os.path.abspath(__file__))) 
     base_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(base_dir)
     upload_path = os.path.join(base_dir, "uploads")
-    os.makedirs(upload_path, exist_ok=True,)
+    os.makedirs(upload_path, exist_ok=True)
     
     # 2. SET THE SECRET KEY (The new fix)
     # This acts as a password for the upload "permission slip"
