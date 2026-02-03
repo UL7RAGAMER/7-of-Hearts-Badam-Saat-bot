@@ -86,7 +86,7 @@ class GameUI:
         )
 
     # --- UPLOAD & SCAN LOGIC ---
-    def _on_file_picked(self, e: ft.FilePickerResultEvent):
+    def _on_file_picked(self, e):
         """Called when user selects a file on their phone."""
         if not e.files: return
         
